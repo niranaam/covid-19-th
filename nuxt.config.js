@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/event-bus.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -48,7 +48,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://corona.lmao.ninja/v2'
+  },
   /*
    ** Build configuration
    */

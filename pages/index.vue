@@ -2,7 +2,7 @@
   <b-container>
     <div v-if="covidTotal">
       <fieldset class="border p-3">
-        <legend :title="lastUpdated" class="w-auto">
+        <legend class="w-auto">
           <h2>สถานการณ์ในไทย</h2>
         </legend>
         <covid-thailand v-bind="covidTotal" />
@@ -38,31 +38,12 @@ export default {
   },
   data() {
     return {
-      covidTotal: null,
-      options: {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      }
+      covidTotal: null
     };
   },
-  computed: {
-    lastUpdated() {
-      const lastDate = new Date(this.covidTotal.updated).toLocaleDateString(
-        'th-Th',
-        this.options
-      );
-      const lastTime = new Date(this.covidTotal.updated).toLocaleTimeString(
-        'th-Th'
-      );
-      return `อัพเดทครั้งล่าสุดเมื่อ ${lastDate} ${lastTime} น.`;
-    }
-  },
   async mounted() {
-    const data = await this.$axios.$get(
-      'https://corona.lmao.ninja/v2/countries/thailand'
-    );
+    const data = await this.$axios.$get('/countries/thailand');
+    this.$bus.$emit('status-updated', data.updated);
     this.covidTotal = data;
   }
 };

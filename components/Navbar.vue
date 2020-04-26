@@ -12,6 +12,9 @@
               ใช้ API ของ Novel COVID API
             </b-badge>
           </b-nav-item>
+          <b-nav-item v-if="updated">
+            <b-badge variant="warning">{{ lastUpdate }}</b-badge>
+          </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item to="/">หน้าแรก</b-nav-item>
@@ -33,8 +36,31 @@ export default {
   },
   data() {
     return {
-      href: 'https://corona.lmao.ninja/'
+      href: 'https://corona.lmao.ninja/',
+      updated: null,
+      options: {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }
     };
+  },
+  computed: {
+    lastUpdate() {
+      const lastDate = new Date(this.updated).toLocaleDateString(
+        'th-Th',
+        this.options
+      );
+      const lastTime = new Date(this.updated).toLocaleTimeString('th-Th');
+      return `อัพเดทครั้งล่าสุดเมื่อ ${lastDate} เวลา ${lastTime} น.`;
+    }
+  },
+  mounted() {
+    this.$bus.$on('status-updated', (d) => (this.updated = d));
+  },
+  beforeDestroy() {
+    this.$bus.$off('status-updated');
   }
 };
 </script>

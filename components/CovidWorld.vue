@@ -57,7 +57,7 @@ export default {
     };
   },
   async mounted() {
-    const world = await this.$axios.$get('https://corona.lmao.ninja/v2/all');
+    const world = await this.$axios.$get('/all');
     this.covidWorld = world;
   }
 };
