@@ -7,3 +7,13 @@
     </b-card>
   </b-container>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'เกี่ยวกับ'
+    };
+  }
+};
+</script>

@@ -13,7 +13,7 @@
             </b-badge>
           </b-nav-item>
           <b-nav-item v-if="updated">
-            <b-badge variant="warning">{{ lastUpdate }}</b-badge>
+            <b-badge variant="secondary">{{ lastUpdate }}</b-badge>
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">

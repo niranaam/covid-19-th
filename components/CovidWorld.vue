@@ -5,33 +5,25 @@
         <h3 class="mb-0">สถานการณ์โดยรวมของโลก</h3>
       </template>
       <b-list-group>
-        <b-list-group-item
-          class="d-flex justify-content-between align-items-center"
-        >
+        <b-list-group-item :class="cssClass">
           ผู้ติดเชื้อทั้งหมด
           <b-badge variant="warning" pill>
             {{ covidWorld.cases | numberFormat }} ราย
           </b-badge>
         </b-list-group-item>
-        <b-list-group-item
-          class="d-flex justify-content-between align-items-center"
-        >
+        <b-list-group-item :class="cssClass">
           รักษาหายแล้ว
           <b-badge variant="warning" pill>
             {{ covidWorld.recovered | numberFormat }} ราย
           </b-badge>
         </b-list-group-item>
-        <b-list-group-item
-          class="d-flex justify-content-between align-items-center"
-        >
+        <b-list-group-item :class="cssClass">
           กำลังรักษา
           <b-badge variant="warning" pill>
             {{ covidWorld.active | numberFormat }} ราย
           </b-badge>
         </b-list-group-item>
-        <b-list-group-item
-          class="d-flex justify-content-between align-items-center"
-        >
+        <b-list-group-item :class="cssClass">
           เสียชีวิต
           <b-badge variant="warning" pill>
             {{ covidWorld.deaths | numberFormat }} ราย
@@ -53,7 +45,8 @@ export default {
   },
   data() {
     return {
-      covidWorld: null
+      covidWorld: null,
+      cssClass: 'd-flex justify-content-between align-items-center'
     };
   },
   async mounted() {
