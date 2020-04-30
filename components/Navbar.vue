@@ -56,7 +56,7 @@ export default {
       return `อัพเดทครั้งล่าสุดเมื่อ ${lastDate} เวลา ${lastTime} น.`;
     }
   },
-  mounted() {
+  created() {
     this.$bus.$on('status-updated', (d) => (this.updated = d));
   },
   beforeDestroy() {

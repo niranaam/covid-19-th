@@ -49,7 +49,7 @@ export default {
       cssClass: 'd-flex justify-content-between align-items-center'
     };
   },
-  async mounted() {
+  async created() {
     const world = await this.$axios.$get('/all');
     this.covidWorld = world;
   }
