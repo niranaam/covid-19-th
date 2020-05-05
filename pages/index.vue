@@ -43,7 +43,7 @@ export default {
   },
   async mounted() {
     const data = await this.$axios.$get('/countries/thailand');
-    this.$bus.$emit('status-updated', data.updated);
+    this.$nuxt.$emit('status-updated', data.updated);
     this.covidTotal = data;
   }
 };

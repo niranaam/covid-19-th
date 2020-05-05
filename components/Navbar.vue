@@ -56,11 +56,11 @@ export default {
       return `อัพเดทครั้งล่าสุดเมื่อ ${lastDate} เวลา ${lastTime} น.`;
     }
   },
-  created() {
-    this.$bus.$on('status-updated', (d) => (this.updated = d));
+  mounted() {
+    this.$nuxt.$on('status-updated', (d) => (this.updated = d));
   },
   beforeDestroy() {
-    this.$bus.$off('status-updated');
+    this.$nuxt.$off('status-updated');
   }
 };
 </script>
