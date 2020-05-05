@@ -74,13 +74,13 @@ export default {
       if (this.todayCases) {
         return `เพิ่มขึ้น ${this.todayCases} ราย`;
       }
-      return `ไม่เพิ่มขึ้น`;
+      return 'ไม่เพิ่มขึ้น';
     },
     todayDeath() {
       if (this.todayDeaths) {
         return `เพิ่มขึ้น ${this.todayCases} ราย`;
       }
-      return `ไม่เพิ่มขึ้น`;
+      return 'ไม่เพิ่มขึ้น';
     }
   }
 };
