@@ -7,7 +7,7 @@
       <b-navbar-toggle target="nav-collapse" />
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item :href="href" target="_blank">
+          <b-nav-item href="https://corona.lmao.ninja/" target="_blank">
             <b-badge variant="success">
               ใช้ API ของ Novel COVID API
             </b-badge>
@@ -36,21 +36,20 @@ export default {
   },
   data() {
     return {
-      href: 'https://corona.lmao.ninja/',
-      updated: null,
-      options: {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      }
+      updated: null
     };
   },
   computed: {
     lastUpdate() {
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
       const lastDate = new Date(this.updated).toLocaleDateString(
         'th-Th',
-        this.options
+        options
       );
       const lastTime = new Date(this.updated).toLocaleTimeString('th-Th');
       return `อัพเดทครั้งล่าสุดเมื่อ ${lastDate} เวลา ${lastTime} น.`;
