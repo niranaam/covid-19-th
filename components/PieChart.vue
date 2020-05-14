@@ -31,10 +31,7 @@ export default {
     }
   },
   mounted() {
-    return this.$nextTick(this.createPieChart);
-  },
-  methods: {
-    createPieChart() {
+    return this.$nextTick(() => {
       const ctx = this.$refs.pie.getContext('2d');
       const pieChart = new Chart(ctx, {
         type: 'pie',
@@ -60,7 +57,7 @@ export default {
         }
       });
       return pieChart;
-    }
+    });
   }
 };
 </script>

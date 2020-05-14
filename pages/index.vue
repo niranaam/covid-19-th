@@ -8,18 +8,15 @@
         <covid-thailand v-bind="covidTotal" />
       </fieldset>
       <br />
-      <b-row>
-        <b-col>
-          <pie-chart v-bind="covidTotal" />
-        </b-col>
-        <b-col>
-          <covid-world />
-        </b-col>
-      </b-row>
+      <b-card-group deck>
+        <pie-chart v-bind="covidTotal" />
+        <covid-world />
+      </b-card-group>
     </div>
     <div v-else class="text-center">
       <b-spinner variant="primary" type="grow" label="Spinning" />
     </div>
+    <br />
   </b-container>
 </template>
 
@@ -41,7 +38,7 @@ export default {
       covidTotal: null
     };
   },
-  async mounted() {
+  async created() {
     const data = await this.$axios.$get('/countries/thailand');
     this.$nuxt.$emit('status-updated', data.updated);
     this.covidTotal = data;

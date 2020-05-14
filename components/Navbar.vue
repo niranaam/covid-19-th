@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info">
+  <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-container>
       <b-navbar-brand href="#">
         Covid-19 Thailand
@@ -13,7 +13,7 @@
             </b-badge>
           </b-nav-item>
           <b-nav-item v-if="updated">
-            <b-badge variant="secondary">{{ lastUpdate }}</b-badge>
+            <b-badge variant="info">{{ lastUpdate }}</b-badge>
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
