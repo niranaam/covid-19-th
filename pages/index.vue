@@ -8,10 +8,14 @@
         <covid-thailand v-bind="covidTotal" />
       </fieldset>
       <br />
-      <b-card-group deck>
-        <pie-chart v-bind="covidTotal" />
-        <covid-world />
-      </b-card-group>
+      <b-row align-v="stretch">
+        <b-col>
+          <pie-chart v-bind="covidTotal" />
+        </b-col>
+        <b-col>
+          <covid-world class="h-100" />
+        </b-col>
+      </b-row>
     </div>
     <div v-else class="text-center">
       <b-spinner variant="primary" type="grow" label="Spinning" />

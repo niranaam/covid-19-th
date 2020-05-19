@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    return this.$nextTick(() => {
+    this.$nextTick(() => {
       const ctx = this.$refs.pie.getContext('2d');
       const pieChart = new Chart(ctx, {
         type: 'pie',

@@ -17,8 +17,8 @@
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/">หน้าแรก</b-nav-item>
-          <b-nav-item to="/about">เกี่ยวกับ</b-nav-item>
+          <b-nav-item :to="links.home">หน้าแรก</b-nav-item>
+          <b-nav-item :to="links.about">เกี่ยวกับ</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-container>
@@ -36,7 +36,11 @@ export default {
   },
   data() {
     return {
-      updated: null
+      updated: null,
+      links: {
+        home: { name: 'index' },
+        about: { name: 'about' }
+      }
     };
   },
   computed: {
