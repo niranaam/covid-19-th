@@ -54,8 +54,8 @@ export default {
     };
   },
   async created() {
-    const worlds = await this.$axios.$get('/all');
-    this.covidWorld = worlds;
+    const world = await this.$axios.$get('/all');
+    this.covidWorld = world;
   }
 };
 </script>

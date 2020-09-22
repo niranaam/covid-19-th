@@ -3,7 +3,7 @@
     <b-col>
       <b-card title="ผู้ติดเชื้อทั้งหมด">
         <b-card-text>
-          <h1 :title="todayCase">{{ cases | numberFormat }}</h1>
+          <h1>{{ cases | numberFormat }}</h1>
           <small>ราย</small>
         </b-card-text>
       </b-card>
@@ -27,7 +27,7 @@
     <b-col>
       <b-card title="เสียชีวิต">
         <b-card-text>
-          <h1 :title="todayDeath">{{ deaths | numberFormat }}</h1>
+          <h1>{{ deaths | numberFormat }}</h1>
           <small>ราย</small>
         </b-card-text>
       </b-card>
@@ -68,6 +68,11 @@ export default {
       type: Number,
       default: 0
     }
+  },
+  data() {
+    return {
+      variant: 'success'
+    };
   },
   computed: {
     todayCase() {

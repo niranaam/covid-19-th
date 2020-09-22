@@ -49,7 +49,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://corona.lmao.ninja/v2'
+    baseURL: 'https://disease.sh/v3/covid-19'
   },
   /*
    ** Build configuration
